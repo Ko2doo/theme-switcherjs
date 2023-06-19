@@ -43,7 +43,9 @@ const themeAutodetect = () => {
     .addEventListener('change', (e) => {
       // Если, получаем из локального хранилища preferred-theme которая равняется system или пустое (null) значение,
       // то: передаем в фун-цию определения темы событие вместе со значением селектора: dark или light
-      setTheme(e.matches ? 'dark' : 'light');
+      if (localStorage.getItem('preferred-theme') === 'system' || localStorage.getItem('preferred-theme') === null) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
     });
 
   setTheme(userPreferred || systemMode);
