@@ -4,4 +4,4 @@
 
 <br>
 <br>
-[Пример](https://codepen.io/ko2doo/pen/eYQzNVa)
+<a href="https://codepen.io/ko2doo/pen/eYQzNVa" target="_blank">Пример</a>
