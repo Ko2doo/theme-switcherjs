@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme color Switcher</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <figure class="header__figure">
+        <img src="#" alt="logo" class="header__logo">
+      </figure>
+
+      <div class="theme-switcher" id="theme-switcher">
+        <select id="select-theme-mode" aria-label="Выберите тему">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="first-display">
+        <div class="container">
+          <div class="section-titles">
+            <h1 class="section-title">Заголовок</h1>
+            <h4 class="section-subtitle">Подзаголовок</h4>
+          </div>
+        
+          <p class="ceo">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid quos ad illo, natus doloribus nesciunt eius amet, reiciendis inventore, dolores asperiores omnis. Similique, blanditiis.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer_ceo">Footer</p>
+    </footer>
+  </div>
+
+  <script src="./theme-switcher.js"></script>
+</body>
+</html>
