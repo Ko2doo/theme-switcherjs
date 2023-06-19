@@ -6,7 +6,7 @@ const themeSwitcher = () => {
   const themeSwitcher = document.querySelector('#theme-switcher');
   // проверим в localStorage предпочитаемую юзером тему
   // const userPreferred = localStorage.getItem('preferred-theme') ?? 'system';
-  const userPreferred = localStorage.getItem('preferred-theme-demo') !== null && 'system' !== undefined ? 'system' : 'system';
+  const userPreferred = localStorage.getItem('theme-switched-to') !== null && 'system' !== undefined ? 'system' : 'system';
 
 
   // прослушиваем события в меню опций
@@ -15,7 +15,7 @@ const themeSwitcher = () => {
     // Определеям цветовую тему у пользователя
     const systemMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-    localStorage.setItem('preferred-theme-demo', theme); // записываем в локальное хранилище выбранную тему
+    localStorage.setItem('theme-switched-to', theme); // записываем в локальное хранилище выбранную тему
 
     // передаём атрибут с названием темы пользователя в тег html (начало документа)
     document.documentElement.setAttribute('data-theme-mode', theme === 'system' ? systemMode : theme);
