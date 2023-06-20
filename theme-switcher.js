@@ -6,7 +6,7 @@ const themeSwitcher = () => {
   const themeSwitcher = document.querySelector('#theme-switcher');
   // проверим в localStorage предпочитаемую юзером тему
   // const userPreferred = localStorage.getItem('preferred-theme') ?? 'system';
-  const userPreferred = localStorage.getItem('theme-switched-to') !== null && 'system' !== undefined ? 'system' : 'system';
+  const userPreferred = localStorage.getItem('color-scheme') !== null && 'system' !== undefined ? 'system' : 'system';
 
 
   // прослушиваем события в меню опций
@@ -15,7 +15,7 @@ const themeSwitcher = () => {
     // Определеям цветовую тему у пользователя
     const systemMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-    localStorage.setItem('theme-switched-to', theme); // записываем в локальное хранилище выбранную тему
+    localStorage.setItem('color-scheme', theme); // записываем в локальное хранилище выбранную тему
 
     // передаём атрибут с названием темы пользователя в тег html (начало документа)
     document.documentElement.setAttribute('data-theme-mode', theme === 'system' ? systemMode : theme);
@@ -30,7 +30,7 @@ const themeSwitcher = () => {
 
 const themeAutodetect = () => {
   const systemMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  const userPreferred = localStorage.getItem('preferred-theme');
+  const userPreferred = localStorage.getItem('color-scheme');
 
   // Фун-ция задаёт тему
   function setTheme(theme) {
@@ -43,7 +43,7 @@ const themeAutodetect = () => {
     .addEventListener('change', (e) => {
       // Если, получаем из локального хранилища preferred-theme которая равняется system или пустое (null) значение,
       // то: передаем в фун-цию определения темы событие вместе со значением селектора: dark или light
-      if (localStorage.getItem('preferred-theme') === 'system' || localStorage.getItem('preferred-theme') === null) {
+      if (localStorage.getItem('color-scheme') === 'system' || localStorage.getItem('color-scheme') === null) {
         setTheme(e.matches ? 'dark' : 'light');
       }
     });
@@ -51,5 +51,6 @@ const themeAutodetect = () => {
   setTheme(userPreferred || systemMode);
 };
 
-themeAutodetect();
+
 themeSwitcher();
+themeAutodetect();
